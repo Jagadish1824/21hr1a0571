@@ -14,7 +14,7 @@ void display()
 System.out.println(rollno+" "+name+" "+fee);
 }
 }
-class Student9
+class Student10
 {
 public static void main(String args[])
 {

@@ -14,11 +14,13 @@ void display()
 System.out.println(rollno+" "+name+" "+fee);
 }
 }
-class Student9
+class TestThis
 {
 public static void main(String args[])
 {
-Student s=new Student(111,"Jagadish",200000);
-s.display();
+Student s1=new Student(111,"Jagadish",200000);
+Student s2=new Student(222,"Smarty",300000);
+s1.display();
+s2.display();
 }
 }
