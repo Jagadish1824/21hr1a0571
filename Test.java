@@ -1,24 +1,28 @@
-import java.util.Scanner;
-class PolymorphismExample
+class ChildThread extends Thread
 {
-void print()
+public void run()
 {
-System.out.println("Welcome");
+for(int i=1;i<4;i++)
+{
+try
+{
+Thread.sleep(500);
 }
-void print(String n)
+catch(Exception e)
 {
-System.out.println("Welcome "+n);
+System.out.println(e);
+}
+System.out.println("child thread execution -"+i);
 }
 }
-class Test
+}
+class Test 
 {
-public static void main(String args[])
+public static void main(String args[])throws Exception
 {
-PolymorphismExample ob1=new PolymorphismExample();
-ob1.print();
-Scanner sc=new Scanner(System.in);
-System.out.println("Please enter your name:");
-String s=sc.next();
-ob1.print(s);
+ChildThread th1=new ChildThread();
+th1.start();
+th1.join();
+System.out.println("Main thread completed");
 }
 }
