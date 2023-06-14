@@ -1,12 +1,20 @@
-class Main
+class Main extends Thread
 {
+public static int amount=0;
 public static void main(String args[])
 {
-int[] age={12,4,5};
-System.out.println("Using for-each loop");
-for(int a:age)
+Main thread=new Main();
+thread.start();
+while(thread.isAlive())
 {
-System.out.println(a);
+System.out.println("Waiting...");
 }
+System.out.println("Main: "+amount);
+amount++;
+System.out.println("Main: "+amount);
+}
+public void run()
+{
+amount++;
 }
 }

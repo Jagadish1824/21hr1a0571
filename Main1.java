@@ -1,17 +1,20 @@
-class Main1
+class Main1 extends Thread
 {
+public static int amount=0;
 public static void main(String args[])
 {
-int[] numbers={2,3,4,5,6,7};
-int sum=0;
-Double average;
-for(int number:numbers)
+Main thread=new Main();
+thread.start();
+while(thread.isAlive())
 {
-sum +=number;
+System.out.println("Waiting...");
 }
-int arrayLength=numbers.length;
-average =((double)sum/(double)arrayLength);
-System.out.println("Sum= "+sum);
-System.out.println("Average= "+average);
+System.out.println("Main: "+amount);
+amount++;
+System.out.println("Main: "+amount);
+}
+public void run()
+{
+amount++;
 }
 }
